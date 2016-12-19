@@ -69,6 +69,8 @@ def main():
     mytree.put(12)
     mytree.put(20)
     mytree.put(-2)
+    mytree.put(5)
+    mytree.put(16)
     mytree.printInorder(mytree.root)
 
 if __name__ == '__main__':
