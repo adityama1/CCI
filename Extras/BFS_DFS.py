@@ -35,6 +35,9 @@ class Graph:
         while stack:
             node = stack[-1]
             edges = self.graph[node]
+            for e in edges:
+                if e in stack:
+                    print "Cycle detected from ", node, "to ", e
             for x in edges:
                 if visited[x] == 0:
                     visited[x] = 1
@@ -53,7 +56,7 @@ def main():
     g = Graph()
     g.addEdge(0, 1)
     g.addEdge(0, 2)
-    #g.addEdge(1, 2)
+    g.addEdge(1, 2)
     #g.addEdge(2, 0)
     g.addEdge(2, 3)
     g.addEdge(1, 3)
@@ -62,7 +65,7 @@ def main():
     #g.addEdge(3, 4)
     #g.addEdge(4, 2)
 
-    g.BFS(0)
+    #g.BFS(0)
     g.DFS(0)
 
 if __name__ == '__main__':
